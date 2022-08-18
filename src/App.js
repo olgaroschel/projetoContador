@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useState } from "react"
+import './index.css'
+export default function App (){
+    const [contagem, SetContagem] = useState(0)
+    function Somar(){
+        SetContagem(contagem+1)
+        console.log(contagem)
+    }
+    function Diminuir(){
+        SetContagem(contagem-1)
+        console.log(contagem)
+    }
+    return (
+    <div class="container">
+        <h1>Contador</h1>
+        <button onClick={Somar}> Mais </button>
+        <p id='contagem'>{contagem}</p>
+        <button onClick={Diminuir}>Menos</button>
+     </div>
+    )
 }
-
-export default App;
