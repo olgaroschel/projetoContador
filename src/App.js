@@ -1,7 +1,11 @@
 import { useState } from "react"
 import './index.css'
-export default function App (){
+export default 
+
+function App (){
+
     const [contagem, SetContagem] = useState(0)
+        
     function Somar(){
         SetContagem(contagem+1)
         console.log(contagem)
@@ -10,12 +14,19 @@ export default function App (){
         SetContagem(contagem-1)
         console.log(contagem)
     }
+
+    function handleChange(event) {
+        const valor = parseInt(event.target.value)
+        SetContagem(valor || 0)
+    }
+
     return (
     <div class="container">
         <h1>Contador</h1>
         <button onClick={Somar}> Mais </button>
-        <p id='contagem'>{contagem}</p>
-        <button onClick={Diminuir}>Menos</button>
+        <input type='number' name='contagem' id='contagem' value={contagem} onChange={handleChange}/>
+
+        <button onClick={Diminuir}>Menos</button> 
      </div>
     )
 }

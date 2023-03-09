@@ -46,9 +46,11 @@ button {
 #contagem {
     color:grey;
     background-color: whitesmoke;
-    font-size: 80px;
-    border: 5px solid grey ;
+    font-size: 70px;
+    border: 10px solid grey ;
     border-radius: 50px;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
+    max-width: 150px;
 }
+
